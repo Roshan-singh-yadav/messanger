@@ -20,14 +20,12 @@ app.use(express.json());
 //     console.log(err.message);
 //   });
 
-const server = app.listen(process.env.PORT, () =>
-  console.log(`Server started on ${process.env.PORT}`)
+const server = app.listen(8000, () =>
+  console.log(`Server started on ${8000}`)
 );
 
 const io = socket(server, {
-  cors: {
-    origin: "*",
-  },
+  cors: true,
 });
 
 const onlineUsers = new Map();
